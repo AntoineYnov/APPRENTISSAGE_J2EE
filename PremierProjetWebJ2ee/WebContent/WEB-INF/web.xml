@@ -9,18 +9,36 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <context-param>
+    <param-name>Pays</param-name>
+    <param-value>France</param-value>
+  </context-param>
+  
   <servlet>
-  	<description>Ma premiere Servlet</description>
-  	<servlet-name>MaPremiereServlet</servlet-name>
-  	<servlet-class>fr.editions_eni.servlets.MaPremiereServlet</servlet-class>
-  	<init-param>
-  		<description>un paramètre</description>
-  		<param-name>auteur</param-name>
-  		<param-value>Shenshenko</param-value>
-  	</init-param>
+    <description>Ma premiere Servlet</description>
+    <servlet-name>MaPremiereServlet</servlet-name>
+    <servlet-class>fr.editions_eni.servlets.MaPremiereServlet</servlet-class>
+    <init-param>
+      <description>un paramètre</description>
+      <param-name>Auteur</param-name>
+      <param-value>Shenshenko</param-value>
+    </init-param>
   </servlet>
+  
+  <servlet>
+    <description>Inscription utilisateur</description>
+    <servlet-name>Inscription</servlet-name>
+    <servlet-class>fr.editions_eni.servlets.InscriptionServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
-  	<servlet-name>MaPremiereServlet</servlet-name>
-  	<url-pattern>/MaPremiereServlet</url-pattern>
+    <servlet-name>Inscription</servlet-name>
+    <url-pattern>/Inscription</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>MaPremiereServlet</servlet-name>
+    <url-pattern>/MaPremiereServlet</url-pattern>
   </servlet-mapping>
 </web-app>

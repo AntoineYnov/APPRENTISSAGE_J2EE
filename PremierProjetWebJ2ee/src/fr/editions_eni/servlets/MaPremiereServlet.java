@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MaPremiereServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private String auteur;
+    private String pays;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,10 +33,19 @@ public class MaPremiereServlet extends HttpServlet {
 		this.auteur = auteur;
 	}
 
+	public String getPays() {
+		return pays;
+	}
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+
 	@Override
     public void init() throws ServletException{
     	System.out.println("Appel de la méthode init de la servlet");
-    	setAuteur(this.getInitParameter("auteur"));
+    	setAuteur(this.getInitParameter("Auteur"));
+    	setPays(getServletContext().getInitParameter("Pays"));
     	
     }
 	
@@ -59,7 +69,7 @@ public class MaPremiereServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("Appel de la méthode doGet de la servlet");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.getWriter().append("Page crée par: ").append(getAuteur());
+		response.getWriter().append("Page crée par: ").append(getAuteur()).append(" en ").append(getPays());
 	}
 
 	/**
